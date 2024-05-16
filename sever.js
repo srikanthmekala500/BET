@@ -7,6 +7,10 @@ const connectdb = require('./db/db')
 const body_parser = require('body-parser')
 const cors = require('cors')
 const path = require('path')
+const {fileURLToPath} = require('url')
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 app.use(express.json())
 app.use(cors())
 app.use(body_parser.json())
