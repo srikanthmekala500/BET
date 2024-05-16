@@ -21,7 +21,7 @@ app.get('*',(req,res)=>{
 
 app.use('/api/v1/user',require('./routers/usertouter'))
 
-app.listen(port,()=>{
+app.listen(PORT,()=>{
     console.log(`Server Running On PORT ${PORT} on ${process.env.NODE_ENV} Mode `
     .bgMagenta.white
     )
