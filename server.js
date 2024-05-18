@@ -14,11 +14,14 @@ app.use(body_parser.json())
 connectdb()
  
 // static file
-app.use(express.static(path.join(__dirname,'./bet/build'))) 
+app.use(express.static(path.join(__dirname,'.bet/build'))) 
 app.get('*',(req,res)=>{
     res.sendFile(path.join(__dirname,'./bet/build/index.html'))
 })
+
+
  
+
 app.use('/api/v1/user',require('./routers/usertouter'))
 
 app.listen(port,()=>{
