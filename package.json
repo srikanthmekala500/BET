@@ -7,7 +7,7 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "bet": "npm start --prefix ./bet",
-    "build": "concurrently \"npm start\" \"npm run build\""
+    "build": "concurrently \"npm start\" \"npm run bet\""
   },
   "keywords": [],
   "author": "",
