@@ -13,16 +13,19 @@ app.use(body_parser.json())
 
 connectdb()
  
-// static file
-app.use(express.static(path.join(__dirname,'./bet/build'))) 
-app.get('*',(req,res)=>{
-    res.sendFile(path.join(__dirname,'./bet/build/index.html'))
-})
-
 
  
 
 app.use('/api/v1/user',require('./routers/usertouter'))
+
+// static file
+ 
+
+app.use(express.static(path.join(__dirname, "./bet/build")));
+
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "./bet/build/index.html"));
+});
 
 app.listen(port,()=>{
     console.log(`Server Running On PORT ${port} on ${process.env.NODE_ENV} Mode `
